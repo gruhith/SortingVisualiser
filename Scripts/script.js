@@ -1,6 +1,5 @@
 
 let inputElement = document.getElementById("input-size");
-let bars ;
 render()
 
 function render(){
@@ -16,7 +15,10 @@ function render(){
       barsContainer.append(bar);
   }  
 }
-
+function generateArray(){
+  inputElement.value = generateRandom(0,100);
+  render();
+}
 function getWidth(newSize){
   let width = (generateRandom(100,600)/newSize);
   if(width > 5) return width;
