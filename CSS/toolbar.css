@@ -1,0 +1,54 @@
+body{
+  margin-top: 0;
+  margin-left: 0;
+}
+.toolbar{
+  display: flex;
+  height: 100px;
+  background-color: rgb(52, 73, 94);
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 0;
+}
+
+.regular-button{
+  border: none;
+  padding: 3px;
+  background-color: rgb(52, 73, 94);
+  font-family: monospace,Roboto;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+  
+}
+.regular-button:hover{
+  color:rgb(236, 125, 125);
+}
+.regular-button:active{
+  opacity: 0.5;
+}
+
+.div-bars{
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 55px;
+  margin-bottom: 50px;
+}
+.bar-container{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+}
+.bar{
+  width: 5px;
+  background-color: aqua;
+  display:inline-block;
+  margin-right: 1px;
+
+}
+.note{
+  font-family: monospace,Roboto;
+  font-size: large;
+  color: white; 
+}
