@@ -1,4 +1,5 @@
-export function masterSorter(sortingType){
-  alert(sortingType);
+export  function masterSorter(sortingType){
+  
 }
+
 
