@@ -16,19 +16,20 @@
   <body>
     
     <div class="toolbar">
-      <button class="regular-button" onclick="generateArray()">Generate Random Array</button>
+      <button id = "generator-button" class="regular-button" onclick="generateArray()">Generate Random Array</button>
       <div class = "div-bars"></div>
-      <div class = "note">Change Array Size and Speed</div>
+      <div id = "input-note"class = "note">Change Array Size and Speed</div>
       <input id ="input-size" type="range" min="0" max="150" oninput="render()" />
       <div class = "div-bars"></div>
-      <button class="regular-button">Merge Sort</button>
-      <button class="regular-button">Bubble Sort</button>
-      <button class="regular-button">Quick Sort</button>
-      <button class="regular-button">Selection Sort</button>
+      <button id = "merge" class="regular-button" onclick="unHideSortButton(this)">Merge Sort</button>
+      <button id = "bubble" class="regular-button" onclick="unHideSortButton(this)">Bubble Sort</button>
+      <button id = "quick" class="regular-button"  onclick="unHideSortButton(this)">Quick Sort</button>
+      <button id = "selection" class="regular-button"  onclick="unHideSortButton(this)">Selection Sort</button>
       <div class = "div-bars"></div>
+      <button class="sort-button" id = "sort-button" onclick="startSorting()">Sort Now!</button>
     </div>
     <div class = "bar-container" id = "bar-container">
     </div>
-    <script src="Scripts/script.js"></script> 
+    <script  src="Scripts/script.js" ></script> 
   </body>
 </html>

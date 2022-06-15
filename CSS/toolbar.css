@@ -25,6 +25,7 @@ body{
   color:rgb(236, 125, 125);
 }
 .regular-button:active{
+  color:rgb(236, 125, 125);
   opacity: 0.5;
 }
 
@@ -52,4 +53,15 @@ body{
   font-family: monospace,Roboto;
   font-size: large;
   color: white; 
+}
+
+.sort-button{
+  border: none;
+  padding: 3px;
+  background-color: rgb(52, 73, 94);
+  font-family: monospace,Roboto;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+  display: none;
 }
