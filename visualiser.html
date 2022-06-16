@@ -18,8 +18,11 @@
     <div class="toolbar">
       <button id = "generator-button" class="regular-button" >Generate Random Array</button>
       <div class = "div-bars"></div>
-      <div id = "input-note"class = "note">Change Array Size and Speed</div>
+      <div id = "input-note"class = "note">Array Size</div>
       <input id ="input-size" type="range" min="0" max="150" />
+      <div class = "div-bars"></div>
+      <div id = "input-note"class = "note">Sorting Speed</div>
+      <input id ="input-speed" type="range" min="20" max="300" stepDown=10 value=60/> 
       <div class = "div-bars"></div>
       <button id = "merge" class="regular-button" >Merge Sort</button>
       <button id = "bubble" class="regular-button" >Bubble Sort</button>
@@ -29,7 +32,8 @@
       <button class="sort-now-button" id = "sort-button" >Sort Now!</button>
     </div>
     <div class = "bar-container" id = "bar-container">
-    </div>
-    <script type = "module" src="./Scripts/script.js" ></script> 
+    </div>   
+    <script src="./Scripts/SpeedInfo.js"></script>
+    <script type = "module" src="./Scripts/index.js" ></script> 
   </body>
 </html>

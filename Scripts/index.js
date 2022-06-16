@@ -2,47 +2,51 @@ import { masterSorter } from './Algorithms/SortingMaster.js';
 
 let supportedSorting = ["merge","bubble","quick","selection"];
 let selectedSort = "";
-let heights = [];
 
 
-let generator_button = document.getElementById("generator-button");
-let input_range = document.getElementById("input-size");
-let sort_button = document.getElementById("sort-button");
+
+
+
+let generatorButton = document.getElementById("generator-button");
+let inputSize = document.getElementById("input-size");
+let sortButton = document.getElementById("sort-button");
 
 render();
 
-generator_button.addEventListener("click", generateArray);
-input_range.addEventListener("input", render);
+generatorButton.addEventListener("click", generateArray);
+
+inputSize.addEventListener("input", render);
+
 supportedSorting.forEach(element => {
   document.getElementById(element).addEventListener("click", unHideSortButton);
 });
-sort_button.addEventListener("click", startSorting);
+
+sortButton.addEventListener("click", startSorting);
+
 
 
 
  function render(){
-  let newSize = parseInt(input_range.value)+6;
+  let newSize = parseInt(inputSize.value)+6;
   let barsContainer = document.getElementById("bar-container");
   barsContainer.innerHTML = "";
-  let width = getWidth(newSize)+"px";
-  heights = [];
+  let width = getWidth(newSize);
   for(let idx = 0;idx <  newSize;idx++){
       let bar = document.createElement("div");
       bar.className = "bar";
       bar.id = ""+idx;
       let height = generateRandom(10,600);
       bar.style.height = height+"px";
-      heights.push(height);
-      bar.style.width = width;
+      bar.style.width = width+"px";
       barsContainer.append(bar);
   }  
 }
  function generateArray(){
-  input_range.value = generateRandom(40,100);
+  inputSize.value = generateRandom(40,100);
   render();
 }
 function unHideSortButton(event){
-  let sortElement = sort_button;
+  let sortElement = sortButton;
   sortElement.style.display = "block"
   for(let idx = 0;idx <  supportedSorting.length; idx++){
     let element = document.getElementById(supportedSorting[idx]);
@@ -56,21 +60,54 @@ function unHideSortButton(event){
   selectedSort = event.target.id;
 }
 
-function startSorting(){
+async function startSorting(){
   disableAllElements();
-  masterSorter(selectedSort);
+  let elements = document.querySelectorAll(".bar");
+  await masterSorter(elements,selectedSort);
+  enableAllElements();
 }
 function disableAllElements(){
   disableAllButtonsAndChangeColor();
   disableInputBar();
   disableRandomGenerator();
 }
+
+function enableAllElements(){
+  enableAllButtonsAndChangeColor();
+  enableInputBar();
+  enableRandomGenerator();
+}
+
+
+function enableRandomGenerator(){
+  generatorButton.disabled = false;
+  generatorButton.style.color = "white";
+}
+function enableInputBar(){
+  let element = inputSize;
+  element.disabled = false;
+  element = document.getElementById("input-note");
+  element.style.color = "white";
+}
+function enableAllButtonsAndChangeColor(){
+  for(let idx = 0;idx < supportedSorting.length;idx++){
+    let element = document.getElementById(supportedSorting[idx]); 
+    element.disabled = false;
+      element.style.color = "white";
+  }
+  sortButton.style.color = "white";
+  sortButton.disabled = false;
+}
+
+
+
+
 function disableRandomGenerator(){
-  generator_button.disabled = true;
-  generator_button.style.color = "gray";
+  generatorButton.disabled = true;
+  generatorButton.style.color = "gray";
 }
 function disableInputBar(){
-  let element = input_range;
+  let element = inputSize;
   element.disabled = true;
   element = document.getElementById("input-note");
   element.style.color = "gray";
@@ -83,8 +120,8 @@ function disableAllButtonsAndChangeColor(){
       element.style.color = "gray";
     }
   }
-  sort_button.style.color = "gray";
-  sort_button.disabled = true;
+  sortButton.style.color = "gray";
+  sortButton.disabled = true;
 }
 
 
