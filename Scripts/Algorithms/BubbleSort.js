@@ -11,7 +11,7 @@ async function bubbleSorter(elements){
       await sleep(delay);
 
       
-      if(parseInt(elements[j].style.height) < parseInt(elements[j+1].style.height)){
+      if(parseInt(elements[j].style.height) > parseInt(elements[j+1].style.height)){
           
         let temp = elements[j].style.height;
         elements[j].style.height = elements[j+1].style.height;
