@@ -38,7 +38,7 @@ body{
 .bar-container{
   width: 100%;
   height: 100%;
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
   text-align: center;
 }
 .bar{

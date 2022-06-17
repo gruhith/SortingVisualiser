@@ -1,7 +1,9 @@
-function sleep(milisec) { 
+
+function sleep(millisec) { 
   return new Promise(resolve => { 
-      setTimeout(() => { resolve('') }, milisec); 
+      setTimeout( ()=>{resolve('')}, millisec); 
   }) 
 }
+
 
 export {sleep};
