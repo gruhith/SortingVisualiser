@@ -65,6 +65,7 @@ async function startSorting(){
   let elements = document.querySelectorAll(".bar");
   await masterSorter(elements,selectedSort);
   enableAllElements();
+  selectedSort = "";
 }
 function disableAllElements(){
   disableAllButtonsAndChangeColor();
