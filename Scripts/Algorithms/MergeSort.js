@@ -66,7 +66,7 @@ async function merge(elements, low, mid, high){
   while(i < n1){
       await sleep(delay);
       if((n1 + n2) === elements.length){
-          elements[k].style.background = 'rgb(52, 73, 94';
+          elements[k].style.background = 'rgb(236, 125, 125)';
       }
       else{
           elements[k].style.background = 'lightgreen';
